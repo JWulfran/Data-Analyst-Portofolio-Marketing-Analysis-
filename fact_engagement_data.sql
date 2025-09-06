@@ -5,6 +5,6 @@ select EngagementID, ContentID, CampaignID, ProductID,
 	LEFT(ViewsClicksCombined, CHARINDEX('-', ViewsClicksCombined)-1) as Views,
 	RIGHT(ViewsClicksCombined, len(ViewsClicksCombined)- charindex('-', ViewsClicksCombined)) as Clicks,
 	Likes,
-	FORMAT(convert(DATE, EngagementDate), 'dd.MM.yyyy') as EngagementDate
+	FORMAT(convert(DATE, EngagementDate), 'yyyy-MM-dd') as EngagementDate
 from dbo.engagement_data
 where ContentType != 'Newsletter';
